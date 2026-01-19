@@ -1,0 +1,231 @@
+.container {
+  padding: 3rem 0 2rem;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.export-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.export-button:hover {
+  background-color: #0056b3;
+}
+
+.table-container {
+  width: 100%;
+  overflow: auto;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 10px;
+  max-width: 98vw;
+  padding: 0 0.1rem 0 0.25rem;
+}
+
+.schedule-table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+  text-align: center;
+  font-size: 14px;
+  min-width: 20px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+.nurse-text {
+  padding: 2px;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.schedule-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  font-size: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.sticky-left {
+  position: sticky;
+  left: 0;
+  background-color: #fff;
+  font-weight: bold;
+  z-index: 3;
+  border-right: 2px solid black;
+  min-width: 200px;
+  max-width: 250px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: left;
+  padding: 6px;
+}
+
+.shift-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  width: 50px;
+  font-size: 1rem;
+  border: 0;
+  color: #333;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+}
+
+.shift-select option {
+  writing-mode: horizontal-tb;
+}
+
+.week-divider {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+/* Container for adding a new nurse */
+.add-nurse {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  gap: 10px;
+}
+
+/* Style for the new nurse name input */
+.add-nurse input[type="text"] {
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #0c0c0c;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  color: black;
+}
+
+/* Style for the Add Nurse button */
+.add-nurse button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.add-nurse button:hover {
+  background-color: #218838;
+}
+
+/* Style for the Remove button for each nurse row */
+.remove-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+  }
+  .container {
+    width: 100%;
+    padding: 0;
+    max-width: 100vw;
+    height: 100vh;
+    margin: 0;
+  }
+  .table-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+  }
+
+  .schedule-table th,
+  .schedule-table td {
+    font-size: 12px;
+    padding: 4px;
+    border-width: 2px;
+    border-color: #000;
+  }
+
+  .schedule-table {
+    width: 100%;
+    height: auto;
+    table-layout: auto;
+  }
+
+  .sticky-left {
+    min-width: 180px;
+    max-width: 250px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+
+    font-size: 13px;
+  }
+
+  .shift-select {
+    font-size: 12px;
+  }
+
+  .export-button {
+    display: none;
+  }
+
+  .actions-column {
+    display: none;
+  }
+  .add-nurse {
+    display: none;
+  }
+
+  .screen-only {
+    display: none !important;
+  }
+  .print-only {
+    display: inline !important;
+  }
+}
+
+.print-only {
+  display: none;
+}
